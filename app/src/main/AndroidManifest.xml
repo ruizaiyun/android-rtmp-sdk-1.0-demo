@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.easefun.polyvrtmp">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CAMERA" /><!-- 属于android6.0运行时权限-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /><!-- 属于android6.0运行时权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /><!-- 属于android6.0运行时权限-->
+
+    <uses-feature android:name="android.hardware.Camera" />
+
+    <application
+        android:name="com.easefun.polyvrtmp.PolyvApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:theme">
+        <!--targetSdkVersion-->
+        <meta-data android:name="android.max_aspect" android:value="2.1" />
+        <activity
+            android:name="com.easefun.polyvrtmp.activity.PolyvLoginActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/polyv_rtmp_SplashTheme"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name="com.easefun.polyvrtmp.activity.PolyvMainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme.Skid"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- 以下是选取logo的配置 -->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 以上是选取logo的配置 -->
+        <activity
+            android:name="com.easefun.polyvrtmp.activity.PolyvSettingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/polyv_rtmp_setting_activity"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity android:name=".activity.PolyvFinishActivity" />
+        <activity
+            android:name="com.easefun.polyvrtmp.activity.PolyvChatActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/polyv_rtmp_share_activity"
+            android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
+        <activity
+            android:name="com.easefun.polyvrtmp.activity.PolyvLaunchActivity"
+            android:theme="@style/polyv_rtmp_SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

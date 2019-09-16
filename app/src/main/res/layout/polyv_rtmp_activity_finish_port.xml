@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/polyv_rtmp_gray_setting">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="直播已结束"
+                android:textColor="@color/polyv_rtmp_white_share"
+                android:textSize="32dp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/polyv_rtmp_finish_textview"
+                android:layout_below="@id/tv_finish"
+                android:layout_marginTop="@dimen/polyv_rtmp_finish_margintop_custom"
+                android:text="直播时长    1  小时  5  分钟  30  秒" />
+
+            <TextView
+                android:id="@+id/tv_watch"
+                style="@style/polyv_rtmp_finish_textview"
+                android:layout_below="@id/tv_time"
+                android:layout_marginTop="30dp"
+                android:text="观看人次    6666" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                style="@style/polyv_rtmp_finish_textview"
+                android:layout_below="@id/tv_watch"
+                android:layout_marginTop="@dimen/polyv_rtmp_finish_margintop_s"
+                android:drawableLeft="@drawable/polyv_rtmp_icon_money"
+                android:text="收获0元打赏"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/polyv_rtmp_finish_margintop_s"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_moneysort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="打赏排行"
+                android:textColor="@color/polyv_rtmp_white_share"
+                android:textSize="@dimen/polyv_rtmp_finish_tv_textsize_m" />
+
+            <View
+                android:layout_width="@dimen/polyv_rtmp_finish_v_width"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/polyv_rtmp_finish_marginleft"
+                android:layout_toLeftOf="@id/tv_moneysort"
+                android:background="@color/polyv_rtmp_white_share" />
+
+            <View
+                android:layout_width="@dimen/polyv_rtmp_finish_v_width"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/polyv_rtmp_finish_marginleft"
+                android:layout_toRightOf="@id/tv_moneysort"
+                android:background="@color/polyv_rtmp_white_share" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_finish"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/polyv_rtmp_finish_bt_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/polyv_rtmp_finish_marginbottom"
+        android:layout_marginLeft="@dimen/polyv_rtmp_finish_marginleft_m"
+        android:layout_marginRight="@dimen/polyv_rtmp_finish_marginleft_m"
+        android:background="@drawable/polyv_rtmp_finish_bt_pressed_finish"
+        android:gravity="center"
+        android:text="退出直播"
+        android:textColor="@color/polyv_rtmp_white_share"
+        android:textSize="@dimen/polyv_rtmp_finish_tv_textsize_s"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/bt_setting"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_above="@id/bt_finish"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="@dimen/polyv_rtmp_finish_marginleft_m"
+        android:layout_marginRight="@dimen/polyv_rtmp_finish_marginleft_m"
+        android:background="@drawable/polyv_rtmp_finish_bt_pressed_setting"
+        android:gravity="center"
+        android:text="返回直播设置"
+        android:textColor="#212121"
+        android:textSize="18sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_moneysort"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bt_setting"
+        android:layout_below="@id/ll_top"
+        android:layout_marginBottom="@dimen/polyv_rtmp_finish_margintop_s"
+        android:layout_marginTop="@dimen/polyv_rtmp_finish_margintop_s_l"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:visibility="gone" />
+</RelativeLayout>
